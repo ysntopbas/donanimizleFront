@@ -22,13 +22,16 @@ const RegisterForm = () => {
     };
 
     try {
-      const response = await fetch("https://localhost:7117/api/Auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://donanimeasyleapi.azurewebsites.net/api/Auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         const responseData = await response.json();

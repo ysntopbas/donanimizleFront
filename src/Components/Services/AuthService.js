@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:7117/api/Auth"; // API'nizin URL'ini belirtin
+const API_URL = "https://donanimeasyleapi.azurewebsites.net/api/Auth"; // API'nizin URL'ini belirtin
 
 
 // Login fonksiyonu

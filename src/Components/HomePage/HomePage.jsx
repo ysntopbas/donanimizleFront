@@ -49,11 +49,15 @@ export default function HomePage() {
 
     // Authorization başlığını ekliyoruz
     axios
-      .post(`https://localhost:7117/api/Device/AddDevice`, data, {
-        headers: {
-          Authorization: `Bearer ${token}`, // Token'ı Authorization başlığı olarak ekliyoruz
-        },
-      })
+      .post(
+        `https://donanimeasyleapi.azurewebsites.net/api/Device/AddDevice`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Token'ı Authorization başlığı olarak ekliyoruz
+          },
+        }
+      )
       .then((response) => {
         setSnackbar({
           open: true,

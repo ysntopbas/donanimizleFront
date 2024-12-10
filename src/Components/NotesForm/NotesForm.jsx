@@ -30,9 +30,12 @@ export default function NotesForm() {
   useEffect(() => {
     if (username) {
       axios
-        .get(`https://localhost:7117/api/Device/GetDevices/${username}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        })
+        .get(
+          `https://donanimeasyleapi.azurewebsites.net/api/Device/GetDevices/${username}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        )
         .then((response) => {
           const ids = response.data;
           setDeviceIDs(ids);
@@ -48,9 +51,12 @@ export default function NotesForm() {
     deviceIDs.forEach((deviceID) => {
       if (deviceID) {
         axios
-          .get(`https://localhost:7117/api/Donanim/GetNote/${deviceID}`, {
-            headers: { Authorization: `Bearer ${token}` },
-          })
+          .get(
+            `https://donanimeasyleapi.azurewebsites.net/api/Donanim/GetNote/${deviceID}`,
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          )
           .then((response) => {
             const notesData = Array.isArray(response.data)
               ? response.data
@@ -89,9 +95,13 @@ export default function NotesForm() {
     };
 
     axios
-      .post("https://localhost:7117/api/Donanim/SaveNote", payload, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .post(
+        "https://donanimeasyleapi.azurewebsites.net/api/Donanim/SaveNote",
+        payload,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then(() => {
         setSnackbar({
           open: true,

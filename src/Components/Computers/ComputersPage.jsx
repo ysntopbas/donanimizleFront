@@ -46,9 +46,12 @@ export default function ComputersPage() {
 
     if (username && token) {
       axios
-        .get(`https://localhost:7117/api/Device/GetDeviceInfo/${username}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        })
+        .get(
+          `https://donanimeasyleapi.azurewebsites.net/api/Device/GetDeviceInfo/${username}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        )
         .then((response) => {
           const devices = response.data || [];
           setComputers(devices);
