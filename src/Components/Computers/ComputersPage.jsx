@@ -88,7 +88,7 @@ export default function ComputersPage() {
     const token = localStorage.getItem("token");
 
     axios
-      .get(`https://localhost:7117/api/Device/GetDeviceInfo/${username}`, {
+      .get(`https://donanimeasyleapi.azurewebsites.net/api/Device/GetDeviceInfo/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -105,7 +105,7 @@ export default function ComputersPage() {
     const token = localStorage.getItem("token");
 
     axios
-      .delete("https://localhost:7117/api/Device/DeleteDevice", {
+      .delete("https://donanimeasyleapi.azurewebsites.net/api/Device/DeleteDevice", {
         headers: { Authorization: `Bearer ${token}` },
         data: { username, deviceID },
       })
