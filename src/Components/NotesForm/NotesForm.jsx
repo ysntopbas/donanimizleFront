@@ -37,8 +37,11 @@ export default function NotesForm() {
           }
         )
         .then((response) => {
-          const ids = response.data;
-          setDeviceIDs(ids);
+          const devices = Array.isArray(response.data) 
+            ? response.data.map(device => device.deviceID)
+            : [response.data.deviceID];
+          
+          setDeviceIDs(devices);
         })
         .catch((error) => {
           console.error("Error fetching device IDs:", error);
@@ -88,10 +91,9 @@ export default function NotesForm() {
   const handleSendClick = (deviceID) => {
     const updatedNote = notes[deviceID][0];
     const payload = {
-      id: {}, // API'ye gönderilmesi gerektiği belirtilmiş.
-      deviceID,
+      deviceID: deviceID,
       note: updatedNote,
-      dateCreated: new Date().toISOString(),
+      dateCreated: new Date().toISOString()
     };
 
     axios
@@ -105,8 +107,8 @@ export default function NotesForm() {
       .then(() => {
         setSnackbar({
           open: true,
-          message: "Note updated successfully",
-          color: "green",
+          message: "Not başarıyla güncellendi",
+          color: "success"
         });
         setEditableNotes((prev) => ({
           ...prev,
@@ -117,8 +119,8 @@ export default function NotesForm() {
         console.error(`Error saving note for device ${deviceID}:`, error);
         setSnackbar({
           open: true,
-          message: "Error updating note",
-          color: "red",
+          message: "Not güncellenirken hata oluştu",
+          color: "error"
         });
       });
   };
