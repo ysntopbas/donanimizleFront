@@ -23,7 +23,7 @@ const RegisterForm = () => {
 
     try {
       const response = await fetch(
-        "https://donanimeasyleapi.azurewebsites.net/api/Auth/register",
+        "https://donanimapi.onrender.com/api/Auth/register",
         {
           method: "POST",
           headers: {

@@ -1,4 +1,4 @@
-const API_URL = "https://donanimeasyleapi.azurewebsites.net/api/Auth"; // API'nizin URL'ini belirtin
+const API_URL = "https://donanimapi.onrender.com/api/Auth"; // Updated base URL
 
 
 // Login fonksiyonu

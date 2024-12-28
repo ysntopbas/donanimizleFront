@@ -47,7 +47,7 @@ export default function ComputersPage() {
     if (username && token) {
       axios
         .get(
-          `https://donanimeasyleapi.azurewebsites.net/api/Device/GetDeviceInfo/${username}`,
+          `https://donanimapi.onrender.com/api/Device/GetDeviceInfo/${username}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -88,7 +88,7 @@ export default function ComputersPage() {
     const token = localStorage.getItem("token");
 
     axios
-      .get(`https://donanimeasyleapi.azurewebsites.net/api/Device/GetDeviceInfo/${username}`, {
+      .get(`https://donanimapi.onrender.com/api/Device/GetDeviceInfo/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -105,7 +105,7 @@ export default function ComputersPage() {
     const token = localStorage.getItem("token");
 
     axios
-      .delete("https://donanimeasyleapi.azurewebsites.net/api/Device/DeleteDevice", {
+      .delete("https://donanimapi.onrender.com/api/Device/DeleteDevice", {
         headers: { Authorization: `Bearer ${token}` },
         data: { username, deviceID },
       })

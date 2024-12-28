@@ -31,7 +31,7 @@ export default function NotesForm() {
     if (username) {
       axios
         .get(
-          `https://donanimeasyleapi.azurewebsites.net/api/Device/GetDevices/${username}`,
+          `https://donanimapi.onrender.com/api/Device/GetDeviceInfo/${username}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -96,7 +96,7 @@ export default function NotesForm() {
 
     axios
       .post(
-        "https://donanimeasyleapi.azurewebsites.net/api/Donanim/SaveNote",
+        "https://donanimapi.onrender.com/api/Donanim/SaveNote",
         payload,
         {
           headers: { Authorization: `Bearer ${token}` },

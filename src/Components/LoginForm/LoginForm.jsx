@@ -18,7 +18,7 @@ const LoginForm = () => {
 
     try {
       const response = await fetch(
-        "https://donanimeasyleapi.azurewebsites.net/api/Auth/login",
+        "https://donanimapi.onrender.com/api/Auth/login",
         {
           method: "POST",
           headers: {
