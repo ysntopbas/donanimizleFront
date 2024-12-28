@@ -52,7 +52,7 @@ export default function NotesForm() {
       if (deviceID) {
         axios
           .get(
-            `https://donanimeasyleapi.azurewebsites.net/api/Donanim/GetNote/${deviceID}`,
+            `https://donanimapi.onrender.com/api/Donanim/GetNote/${deviceID}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
