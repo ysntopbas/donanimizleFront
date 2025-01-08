@@ -23,7 +23,7 @@ const RegisterForm = () => {
 
     try {
       const response = await fetch(
-        "https://donanimapi.onrender.com/api/Auth/register",
+        "https://localhost:7117/api/Auth/register",
         {
           method: "POST",
           headers: {
@@ -32,7 +32,7 @@ const RegisterForm = () => {
           body: JSON.stringify(data),
         }
       );
-
+      
       if (response.ok) {
         const responseData = await response.json();
         console.log("Registration successful:", responseData);

@@ -18,7 +18,7 @@ const LoginForm = () => {
 
     try {
       const response = await fetch(
-        "https://donanimapi.onrender.com/api/Auth/login",
+        "https://localhost:7117/api/Auth/login",
         {
           method: "POST",
           headers: {
