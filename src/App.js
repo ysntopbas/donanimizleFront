@@ -2,10 +2,10 @@ import './App.css';
 import LoginForm from './Components/LoginForm/LoginForm';
 import RegisterForm from './Components/RegisterForm/RegisterForm';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import NotesForm from './Components/NotesForm/NotesForm'; // Import NotesForm
 import HomePage from './Components/HomePage/HomePage';
 import ComputersPage from './Components/Computers/ComputersPage';
 import PrivateRoute from "./Components/Services/PrivateRoute";
+import Messages from "./Components/Messages/Messages";
 
 function App() {
   return (
@@ -16,9 +16,10 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
 
         {/* Private Routes */}
-        <Route path="/notes" element={<PrivateRoute element={<NotesForm />} />} /> {/* Değiştirilen route */}
+
         <Route path="/home" element={<PrivateRoute element={<HomePage />} />} />
         <Route path="/computers" element={<PrivateRoute element={<ComputersPage />} />} />
+        <Route path="/messages" element={<Messages />} />
 
         {/* Redirect to Login */}
         <Route path="/" element={<Navigate to="/login" />} />

@@ -24,6 +24,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MonitorIcon from "@mui/icons-material/Monitor";
 import DescriptionIcon from "@mui/icons-material/Description";
+import MessageIcon from '@mui/icons-material/Message';
 
 const iconList = [
   {
@@ -33,10 +34,10 @@ const iconList = [
     path: "/computers",
   },
   {
-    label: "Notlar",
-    title: "Notes",
-    icon: <DescriptionIcon />,
-    path: "/notes",
+    label: "Mesajlar",
+    text: 'Messages',
+    icon: <MessageIcon />,
+    path: '/messages'
   },
 ];
 
@@ -159,9 +160,16 @@ export default function MiniDrawer({ children }) {
         </DrawerHeader>
         <Divider />
         <List>
-          {iconList.map((data) => (
-            <ListItem key={data.title} disablePadding>
-              <ListItemButton onClick={() => handleNavigation(data.path)}>
+          {iconList.map((data, index) => (
+            <ListItem key={data.text || index} disablePadding sx={{ display: 'block' }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+                onClick={() => handleNavigation(data.path)}
+              >
                 <ListItemIcon>{data.icon}</ListItemIcon>
                 <ListItemText primary={data.label} />
               </ListItemButton>
