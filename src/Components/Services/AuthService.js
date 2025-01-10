@@ -1,4 +1,4 @@
-const API_URL = "https://localhost:7117/api/Auth"; // Updated base URL
+const API_URL = "https://donanimapi.onrender.com/api/Auth"; // Updated base URL
 
 
 // Login fonksiyonu

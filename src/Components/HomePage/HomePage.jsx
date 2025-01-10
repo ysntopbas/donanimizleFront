@@ -50,7 +50,7 @@ export default function HomePage() {
     // Authorization başlığını ekliyoruz
     axios
       .post(
-        `https://localhost:7117/api/Device/AddDevice`,
+        `https://donanimapi.onrender.com/api/Device/AddDevice`,
         data,
         {
           headers: {

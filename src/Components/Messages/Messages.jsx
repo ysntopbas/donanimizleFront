@@ -32,7 +32,7 @@ import {
 
 // Axios instance'ı düzenle
 const axiosInstance = axios.create({
-  baseURL: 'https://localhost:7117/api',
+  baseURL: 'https://donanimapi.onrender.com/api',
   headers: {
     Authorization: `Bearer ${localStorage.getItem('token')}`
   },
@@ -148,7 +148,7 @@ export default function Messages() {
 
   const fetchMessages = (deviceID) => {
     axios
-      .get(`https://localhost:7117/api/messages/${deviceID}`, {
+      .get(`https://donanimapi.onrender.com/api/messages/${deviceID}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((response) => {
@@ -233,7 +233,7 @@ export default function Messages() {
   const confirmDelete = async () => {
     if (selectedDevice) {
       try {
-        await axios.delete(`https://localhost:7117/api/messages/${selectedDevice.deviceID}`, {
+        await axios.delete(`https://donanimapi.onrender.com/api/messages/${selectedDevice.deviceID}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessages(prev => ({...prev, [selectedDevice.deviceID]: []}));

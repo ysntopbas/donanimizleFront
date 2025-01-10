@@ -98,7 +98,7 @@ export default function ComputersPage() {
     if (username && token) {
       axios
         .get(
-          `https://localhost:7117/api/Device/GetDeviceInfo/${username}`,
+          `https://donanimapi.onrender.com/api/Device/GetDeviceInfo/${username}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -140,7 +140,7 @@ export default function ComputersPage() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        `https://localhost:7117/api/Device/GetDeviceInfo/${username}`,
+        `https://donanimapi.onrender.com/api/Device/GetDeviceInfo/${username}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -182,7 +182,7 @@ export default function ComputersPage() {
     const token = localStorage.getItem("token");
 
     axios
-      .delete("https://localhost:7117/api/Device/DeleteDevice", {
+      .delete("https://donanimapi.onrender.com/api/Device/DeleteDevice", {
         headers: { Authorization: `Bearer ${token}` },
         data: { username, deviceID },
       })
